@@ -1,0 +1,15 @@
+{
+  "index": {
+    "title": "Home",
+    "type": "page",
+    "display": "hidden"
+  },
+  "wiki": {
+    "title": "Wiki",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  }
+}
