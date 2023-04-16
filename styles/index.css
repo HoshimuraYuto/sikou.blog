@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .bg-body {
+    background: rgb(255, 255, 255);
+  }
+
+  .bg-body-dark {
+    background: rgb(17, 17, 17);
+  }
+}
