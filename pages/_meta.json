@@ -8,6 +8,17 @@
     "title": "Wiki",
     "type": "page"
   },
+  "blog": {
+    "type": "page",
+    "title": "Blog",
+    "theme": {
+      "breadcrumb": false,
+      "sidebar": false,
+      "toc": true,
+      "footer": true,
+      "typesetting": "article"
+    }
+  },
   "about": {
     "title": "About",
     "type": "page"

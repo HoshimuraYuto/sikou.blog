@@ -1,0 +1,48 @@
+---
+title: Blog
+searchable: false
+---
+
+import { getPagesUnderRoute } from "nextra/context";
+import Link from "next/link";
+
+export default function BlogIndex({ more = "続きを読む..." }) {
+  return (
+    <>
+      <h1>Blog</h1>
+      {getPagesUnderRoute("/blog").map((page) => {
+    return (
+      <div key={page.route}>
+        <div className="mb-6">
+          <h2>
+            <Link
+              href={page.route}
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              {page.meta?.title || page.frontMatter?.title || page.name}
+            </Link>
+          </h2>
+          <p className="text-gray-700 dark:text-gray-400">
+            {page.frontMatter?.description}{" "}
+            <span className="inline-block">
+              <Link
+                href={page.route}
+                className="text-[color:hsl(var(--nextra-primary-hue),100%,50%)] underline underline-offset-2 decoration-from-font"
+              >
+                {more + " →"}
+              </Link>
+            </span>
+          </p>
+        </div>
+        {page.frontMatter?.date ? (
+          <p className="text-sm text-gray-700 dark:text-gray-400">
+            {page.frontMatter.date}
+          </p>
+        ) : null}
+      </div>
+      );
+      })}
+    </>
+);
+
+}
