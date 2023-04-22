@@ -5,6 +5,7 @@
     "title": "📌 ピン"
   },
   "how-to-use": "使い方",
+  "remark": "備考",
   "bookmark": "ブックマーク",
   "--": {
     "type": "separator",
@@ -13,5 +14,10 @@
   "money": "お金",
   "code": "コード",
   "dictionary": "辞書",
-  "book": "本"
+  "book": "本",
+  "---": {
+    "type": "separator",
+    "title": "🗒 雑記"
+  },
+  "uncategorized": "未分類"
 }
