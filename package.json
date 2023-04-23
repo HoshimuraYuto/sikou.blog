@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && next-sitemap --config sitemap.config.js",
+    "build": "next build && node scripts/generateRssFeed.js && next export && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint"
   },
@@ -26,6 +26,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "feed": "^4.2.2",
+    "gray-matter": "^4.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.6.0",
     "next-sitemap": "^4.0.7",
