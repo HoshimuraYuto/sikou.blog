@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@upstash/redis": "^1.20.4",
     "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
@@ -28,6 +29,7 @@
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
+    "nanoid": "^4.0.2",
     "next-compose-plugins": "^2.2.1",
     "next-pwa": "^5.6.0",
     "next-sitemap": "^4.0.7",
