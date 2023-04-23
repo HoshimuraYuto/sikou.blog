@@ -10,7 +10,9 @@ module.exports = {
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
   plugins: ["@typescript-eslint", "simple-import-sort"],
   rules: {
+    "no-undef": "warn",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
+    "@typescript-eslint/no-var-requires": "warn",
   },
 };
