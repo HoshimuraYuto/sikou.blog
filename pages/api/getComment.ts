@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 const redis = new Redis({
   url: process.env.REDIS_URL,
   token: process.env.REDIS_TOKEN,
-});
+} as RedisProps);
 
 export default async function handler(
   req: NextApiRequest,
