@@ -12,14 +12,14 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   if (req.method === "POST") {
-    const { text, url } = JSON.parse(req.body);
+    const { name, text, url } = JSON.parse(req.body);
     const newComment = {
       id: nanoid(),
       created_at: Date.now(),
-      url: url,
+      name: name,
       text: text,
     };
-    await redis.lpush(url, JSON.stringify(newComment));
+    await redis.lpush(`comment:${url}`, JSON.stringify(newComment));
     res.status(200).json({ message: "Comment received!" });
   }
 }
