@@ -38,7 +38,10 @@ const Comment = () => {
       </button>
       <br />
       {comments.map((comment: CommentProps, index) => (
-        <div className="border-b border-gray-300 border-solid dark:border-gray-600">
+        <div
+          id={String(index)}
+          className="border-b border-gray-300 border-solid dark:border-gray-600"
+        >
           <div>{index + 1}</div>
           <div>{comment.name}</div>
           <div>{comment.text}</div>
@@ -80,6 +83,8 @@ const Comment = () => {
               body: JSON.stringify({ name: name, text: text, url: currentUrl }),
             });
             await getComments();
+            setName("Anonymous");
+            setText("");
           }
         }}
       >

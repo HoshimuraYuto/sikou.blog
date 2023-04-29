@@ -1,18 +1,19 @@
+export const config = {
+  runtime: "edge",
+};
+
 import { Redis } from "@upstash/redis";
 import { nanoid } from "nanoid";
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextRequest, NextResponse } from "next/server";
 
 const redis = new Redis({
   url: process.env.REDIS_URL,
   token: process.env.REDIS_TOKEN,
 } as RedisProps);
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-): Promise<void> {
+export default async function handler(req: NextRequest) {
   if (req.method === "POST") {
-    const { name, text, url } = JSON.parse(req.body);
+    const { name, text, url } = await req.json();
     const newComment = {
       id: nanoid(),
       created_at: Date.now(),
@@ -20,6 +21,6 @@ export default async function handler(
       text: text,
     };
     await redis.lpush(`comment:${url}`, JSON.stringify(newComment));
-    res.status(200).json({ message: "Comment received!" });
+    return new Response(JSON.stringify({ message: "Comment received!" }));
   }
 }
