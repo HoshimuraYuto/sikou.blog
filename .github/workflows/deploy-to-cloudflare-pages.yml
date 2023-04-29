@@ -43,7 +43,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: npx @cloudflare/next-on-pages
+        run: npx @cloudflare/next-on-pages@0.0.0-a680db6
 
       - name: Publish to Cloudflare Pages
         id: cloudflare_pages_deploy
