@@ -17,7 +17,7 @@ const Comment = () => {
 
   const getComments = async () => {
     const response = await fetch(
-      `/api/getComment?` + `name=${name}&text=${text}&url=${currentUrl}`,
+      `/api/get-comment?` + `name=${name}&text=${text}&url=${currentUrl}`,
       {
         method: "GET",
       }
@@ -78,7 +78,7 @@ const Comment = () => {
         className="nx-block nx-px-3 nx-py-2 nx-bg-black/[.05] dark:nx-bg-gray-50/10"
         onClick={async () => {
           if (name != "" && text != "") {
-            await fetch("/api/addComment", {
+            await fetch("/api/add-comment", {
               method: "POST",
               body: JSON.stringify({ name: name, text: text, url: currentUrl }),
             });
