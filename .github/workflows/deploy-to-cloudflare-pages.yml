@@ -43,7 +43,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: npx @cloudflare/next-on-pages --experimental-minify
+        run: npx @cloudflare/next-on-pages
 
       - name: Publish to Cloudflare Pages
         id: cloudflare_pages_deploy
